@@ -1,0 +1,12 @@
+version: v3
+services:
+  sleep:
+    image: sleep1
+    build: ./Dockerfile-sleep
+  test:
+    image: itzzjb/testing
+    build: ./
+    ports:
+      - "3000:3000"
+    depends_on:
+      - sleep
