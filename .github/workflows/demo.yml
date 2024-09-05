@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+env:
+  MY_ENV: "Hello World"
+  MY_SECRET: ${{ secrets.MY_SECRET }}
 jobs:
   hi:
     runs-on: ubuntu-latest
@@ -25,3 +28,7 @@ jobs:
           name: dockerfile
       - name: Cat Dockerfile
         run: cat Dockerfile
+      - name: Echo MY_ENV
+        run: echo $MY_ENV
+      - name: Echo MY_SECRET
+        run: echo $MY_SECRET
