@@ -1,0 +1,12 @@
+name: demo
+run-name: demo
+on:
+  push:
+    branches:
+      - main
+jobs:
+  hi:
+    runs-on: ubuntu:latest
+    steps:
+      - name: echo hi
+        run: echo hi
